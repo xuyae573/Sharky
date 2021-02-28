@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharky.Core", "src\Sharky.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharky.Domain", "src\Sharky.Domain\Sharky.Domain.csproj", "{0E2985E4-C2D9-45FC-A715-C801AC907C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharky.Application", "src\Sharky.Application\Sharky.Application.csproj", "{B634CA6A-1B16-4362-A52D-AF2A86BB5BF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharky.Application", "src\Sharky.Application\Sharky.Application.csproj", "{B634CA6A-1B16-4362-A52D-AF2A86BB5BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharky.Application.Contracts", "src\Sharky.Application.Contracts\Sharky.Application.Contracts.csproj", "{E1FCDA46-99F4-4CBF-B9C9-3C076F341EB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharky.Application.Contracts", "src\Sharky.Application.Contracts\Sharky.Application.Contracts.csproj", "{E1FCDA46-99F4-4CBF-B9C9-3C076F341EB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharky.EntityFrameworkCore", "src\Sharky.EntityFrameworkCore\Sharky.EntityFrameworkCore.csproj", "{DEE958DA-1B06-4A2A-8A08-48DC61BAEE08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E1FCDA46-99F4-4CBF-B9C9-3C076F341EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1FCDA46-99F4-4CBF-B9C9-3C076F341EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1FCDA46-99F4-4CBF-B9C9-3C076F341EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE958DA-1B06-4A2A-8A08-48DC61BAEE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE958DA-1B06-4A2A-8A08-48DC61BAEE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE958DA-1B06-4A2A-8A08-48DC61BAEE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE958DA-1B06-4A2A-8A08-48DC61BAEE08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

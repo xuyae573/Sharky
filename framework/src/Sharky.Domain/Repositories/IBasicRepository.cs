@@ -6,7 +6,7 @@ using Sharky.Domain.Entities;
 
 namespace Sharky.Domain.Repositories
 {
-    public interface IBasicRepository<TEntity> : IReadOnlyBasicRepository<TEntity>
+    public interface IBasicRepository<TEntity> : IReadOnlyRepository<TEntity>
         where TEntity : class, IEntity
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace Sharky.Domain.Repositories
         Task DeleteManyAsync([NotNull] IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default);
     }
 
-    public interface IBasicRepository<TEntity, TKey> : IBasicRepository<TEntity>, IReadOnlyBasicRepository<TEntity, TKey>
+    public interface IBasicRepository<TEntity, TKey> : IBasicRepository<TEntity>, IReadOnlyRepository<TEntity, TKey>
         where TEntity : class, IEntity<TKey>
     {
         /// <summary>

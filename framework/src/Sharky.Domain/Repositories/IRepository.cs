@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Sharky.Domain.Entities;
+using Sharky.Domain.Exception;
 
 namespace Sharky.Domain.Repositories
 {
