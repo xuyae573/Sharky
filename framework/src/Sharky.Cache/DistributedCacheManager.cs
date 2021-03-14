@@ -12,7 +12,6 @@ namespace Sharky.Cache
         private IDistributedCache _cache;
         private IBatchOperations _batchOperation;
         private static readonly AsyncLock _locker;
-        private static readonly List<string> _keys;
         private readonly IDistributedCacheSerializer _cacheSerializer;
 
         public int Expiration { get; set; } = 60 * 30;//30 mins
@@ -20,7 +19,6 @@ namespace Sharky.Cache
         static DistributedCacheManager()
         {
             _locker = new AsyncLock();
-            _keys = new List<string>();
         }
 
         public DistributedCacheManager(IDistributedCache cache, IBatchOperations batchOperation, IDistributedCacheSerializer cacheSerializer)
