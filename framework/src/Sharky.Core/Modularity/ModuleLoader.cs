@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -11,14 +12,25 @@ namespace Sharky.Core.Modularity
     public class ModuleLoader : IModuleLoader
     {
         private readonly bool _ignoreReflectionErrors = true;
+
+        private readonly ILogger _logger;
+
+     
+        public ModuleLoader(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         public IEnumerable<ISharkyModule> LoadModules(Assembly[] assemblies)
         {
             var result = new List<ISharkyModule>();
             var matchedTypes = FindClassesOfType<ISharkyModule>(assemblies);
+
             foreach (var item in matchedTypes)
             {
                 if (IsSharkyModule(item))
                 {
+                    
                     result.Add((ISharkyModule) Activator.CreateInstance(item));
                 }
             }
