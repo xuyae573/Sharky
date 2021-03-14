@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.Extensions.Caching.Distributed;
 using Nito.AsyncEx;
+using System;
+using System.Threading.Tasks;
 
 namespace Sharky.Cache
 {
@@ -28,9 +26,10 @@ namespace Sharky.Cache
             _cacheSerializer = cacheSerializer;
         }
 
-        public Task ClearAllCacheItems()
+        public async Task ClearAllCacheItems()
         {
-            return _batchOperation.ClearAllCacheItems();
+            using var _ = await _locker.LockAsync();
+            await _batchOperation.ClearAllCacheItems();
         }
 
         public Task<T> GetAsync<T>(CacheKey key, Func<Task<T>> acquire)
@@ -106,7 +105,7 @@ namespace Sharky.Cache
 
         public Task RemoveByPrefixAsync(string prefix)
         {
-            throw new NotImplementedException();
+            return _batchOperation.RemoveByPrefixAsync(prefix);
         }
 
         public async Task SetAsync(CacheKey key, object value, int expiredSeconds)
